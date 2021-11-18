@@ -26,90 +26,35 @@
     <div class="col-12 col-md-4">
 
         <div class="card">
-          <form id="user-form" class="card-body">
+          <form id="city-input" class="card-body">
             <label class="form-label" for="citysearch">Search for a City:</label>
             <input name="city" id="city" type="text" autofocus="true" class="form-input" />
             <button type="submit" class="btn">Search</button>
           </form>
         </div>
+  
+        <div class = "card-body" id ="previous-search"></div>
 
-        <hr>
-  
-        <div class="card">
-          
-          <div class="card-body" id="city-buttons">
-            <button class="btn-previous" data-city="austin">Austin</button>
-            <button class="btn-previous" data-city="chicago">Chicago</button>
-            <button class="btn-previous" data-city="newyork">New York</button>
-          </div>
-        </div>
-  
       </div>
       <!-- Search by City Section End -->
 
-      <!-- Show City Weather based on Search Start -->
-        <div class="col-12 col-md-8">
-            <!-- Write the search term title and date for city-->
-            <div class="city">
-            <h2>Atlanta (3/30/2021) <i class="fas fa-cloud"></i></h2>
-            </div>
+      <!-- Searched City Current Day and 5 Day Forecast Start -->
+      <div class="col-12 col-md-9">
+
+          <div class="row border" id="current-forecast">
+              <div class ="col-12">
+                  <h2 id="city-search"></h2>
+                  <div id="current-weather" class ="list-group"></div>
+              </div>  
+          </div>
             
-            <!-- Write city weather data: temp, wind, humidity, uv index -->
-            <div id="city-container" class="city">
-            Temp:<br/>
-            Wind:<br/>
-            Humidity:<br/>
-            UV Index:
-            </div>
-
-            <!-- 5 day forecast -->
-            <h2 class="card-header">5-Day Forecast: <span id="city-forecast"></span></h2>
-        
-            <div class="row justify-space-between">
-            <!-- Write forecast data to this div-->
-            <div id="forecast-container" class="forecastcard">
-                Date<br/>
-                <i class="fas fa-cloud-sun-rain"></i><br/>
-                Temp:<br/>
-                Wind:<br/>
-                Humidity:
-            </div>
-            <!-- Write forecast data to this div-->
-            <div id="forecast-container" class="forecastcard">
-                Date<br/>
-                <i class="fas fa-cloud-sun-rain"></i><br/>
-                Temp:<br/>
-                Wind:<br/>
-                Humidity:
-            </div>
-            <!-- Write forecast data to this div-->
-            <div id="forecast-container" class="forecastcard">
-                Date<br/>
-                <i class="fas fa-sun"></i><br/>
-                Temp:<br/>
-                Wind:<br/>
-                Humidity:
-            </div>
-            <!-- Write forecast data to this div-->
-            <div id="forecast-container" class="forecastcard">
-                Date<br/>
-                <i class="fas fa-cloud-sun"></i><br/>
-                Temp:<br/>
-                Wind:<br/>
-                Humidity:
-            </div>
-            <!-- Write forecast data to this div-->
-            <div id="forecast-container" class="forecastcard">
-                Date<br/>
-                <i class="fas fa-sun"></i><br/>
-                Temp:<br/>
-                Wind:<br/>
-                Humidity:
-            </div>
-
-            </div>
+          <div class="row border" id="five-day">
+              <h2 class="col-12" id="week-forecast"></h2>
+              <div class="d-flex" id="five-day-elements"></div>
+          </div> 
+                 
       </div>
-      <!-- Show City Weather based on Search End -->
+      <!-- Searched City Current Day Forecast End -->
 
       </main>
       <!-- Main End -->
