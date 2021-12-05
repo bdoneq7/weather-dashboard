@@ -9,6 +9,7 @@ function weatherDashboard() {
     var cityWindSpeedEl = document.getElementById("city-wind-speed");
     var cityUVIndexEl = document.getElementById("city-uv-index");
     var citySearchHistoryEl = document.getElementById("city-search-history");
+    //var cityFiveDayEl = document.getElementById("city-five-day");
 
     var APIKey = "23490a99fb08838927ee6b3f63514da6";
 
@@ -43,6 +44,13 @@ function weatherDashboard() {
 
     function displayCity(data) {
         cityNameEl.innerHTML = data.name;
+        var cityWeatherImg = data.weather[0].icon;
+        //cityWeatherImgEl.setAttribute("src","https://openweathermap.org/img/wn/" + cityWeatherImg);
+        cityTempEl.innerHTML = "Temperature: " + data.main.temp + " &#176F";
+        cityHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
+        cityWindSpeedEl.innerHTML = "Wind Speed: " + data.wind.speed + " MPH";
+        //cityUVIndexEl.innerHTML = "UV Index:" + data.?;
+        //cityFiveDayEl.innerHTML = "5-Day Forecast";
     };
 
     searchButtonEl.addEventListener("click", function() {
