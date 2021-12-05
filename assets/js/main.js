@@ -41,11 +41,14 @@ function weatherDashboard() {
 
     };
 
-    function displayCity() {
+    function displayCity(data) {
         cityNameEl.innerHTML = data.name;
     };
 
-    searchButtonEl.addEventListener("click", retrieveCityWeather);
+    searchButtonEl.addEventListener("click", function() {
+        var searchTerm = cityInputEl.value;
+        retrieveCityWeather(searchTerm);
+    });
 
 };
 
