@@ -20,44 +20,90 @@
     </header>
 
     <!-- Main Start -->
-    <main class="flex-row justify-space-between">
+    <main class="display flex-row">
 
     <!-- Search by City Section Start -->
     <div class="col-12 col-md-4">
 
         <div class="card">
-          <form id="city-input" class="card-body">
-            <label class="form-label" for="citysearch">Search for a City:</label>
-            <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="btn">Search</button>
+
+          
+          
+          <label class="form-label">Search for a City:</label>
+
+            
+            <input id="city-search" type="text" autofocus="true" class="form-input" />
+            <button type="button" class="btn" id="button-search">Search</button>
           </form>
+
         </div>
+
+        <button class="btn btn-primary mb-3" type="button" id="history-clear">Clear history</button>
+                <form id="history"></form>
   
-        <div class = "card-body" id ="previous-search"></div>
 
       </div>
       <!-- Search by City Section End -->
 
-      <!-- Searched City Current Day and 5 Day Forecast Start -->
-      <div class="col-12 col-md-9">
 
-          <div class="row border" id="current-forecast">
-              <div class ="col-12">
-                  <h2 id="city-search"></h2>
-                  <div id="current-weather" class ="list-group"></div>
+
+      <!-- Display City -->
+      <div class="col-6">
+
+          <div class="row">
+
+            <h2 id="city-name"></h2>
+            <img id="current-pic" src="placeholder" alt="">
+              <div class ="col-12 col-md-9">
               </div>  
-          </div>
-            
-          <div class="row border" id="five-day">
-              <h2 class="col-12" id="week-forecast"></h2>
-              <div class="d-flex" id="five-day-elements"></div>
-          </div> 
-                 
-      </div>
-      <!-- Searched City Current Day Forecast End -->
 
-      </main>
-      <!-- Main End -->
+              <div class="row">
+              <div class="col-12">
+                <p id="temperature"></p>
+              </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                    <p id="humidity"></p>
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+                      <p id="wind-speed"></p>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 d-flex">
+                    <p id="UV-index"></p>
+                </div>
+
+                
+                  <div class="col-6">
+                      <h3>5-Day Forecast</h3>
+                  </div>
+              
+
+              
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+            
+
+          </div>
+
+      </div>
+
+
+    </div>
+    <!-- Search by City Section End -->
+
+
+    </main>
+    <!-- Main End -->
 
     <!-- Script Tags-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
