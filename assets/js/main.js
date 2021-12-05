@@ -49,8 +49,30 @@ function weatherDashboard() {
         cityTempEl.innerHTML = "Temperature: " + data.main.temp + " &#176F";
         cityHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
         cityWindSpeedEl.innerHTML = "Wind Speed: " + data.wind.speed + " MPH";
-        //cityUVIndexEl.innerHTML = "UV Index:" + data.?;
         //cityFiveDayEl.innerHTML = "5-Day Forecast";
+
+        var latitude = data.coord.lat;
+        var longitude = data.coord.lon;
+        var apiUrlUV = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey;
+        
+        fetch(apiUrlUV).then(function(response) {
+        
+            // if UV Index Found, Display
+            if (response.ok) {
+                response.json().then(function(dataUV) {
+                    console.log(dataUV);
+                    var UVIndex = document.createElement("p");
+                    UVIndex.setAttribute("class","badge badge-danger");
+                    UVIndex.innerHTML = dataUV[0].value;
+                    cityUVIndexEl.innerHTML = "UV Index: ";
+                    cityUVIndexEl.append(UVIndex);
+            });
+    
+        } else {
+            alert("UV Index Not Found!");
+        }
+            
+        })
     };
 
     searchButtonEl.addEventListener("click", function() {
