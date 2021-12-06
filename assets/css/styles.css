@@ -41,12 +41,15 @@
   }
   
   p {
-    padding-top: 5px;
+    padding-top: 15px;
+    padding-left: 20px;
     font-size: 1.2rem;
   }
 
   .forecast {
     font-size: 18px;
+    background-color: var(--blue);
+    margin-left: 10px;
   }
   
    .btn {

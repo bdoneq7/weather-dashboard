@@ -6,14 +6,11 @@ function weatherDashboard() {
     
     var cityInputEl = document.getElementById("city-search");
     var searchButtonEl = document.getElementById("button-search");
-    var clearHistoryEl = document.getElementById("history-clear");
     var cityNameEl = document.getElementById("city-name");
-    var cityPictureEl = document.getElementById("city-picture");
     var cityTempEl = document.getElementById("city-temp");
     var cityHumidityEl = document.getElementById("city-humidity");
     var cityWindSpeedEl = document.getElementById("city-wind-speed");
     var cityUVIndexEl = document.getElementById("city-uv-index");
-    var citySearchHistoryEl = document.getElementById("city-search-history");
     var titleEl = document.getElementById("title");
     
 
@@ -55,7 +52,7 @@ function weatherDashboard() {
         cityWeatherEl.setAttribute("src","https://openweathermap.org/img/wn/");
         cityWeatherEl.innerHTML = data.weather[0].icon + "@2x.png"
         
-        cityTempEl.innerHTML = "Temperature: " + data.main.temp + " &#176F";
+        cityTempEl.innerHTML = "Temperature: " + parseFloat(((data.main.temp-273.15)*1.8)+32).toFixed(2) + " &#176F";
         cityHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
         cityWindSpeedEl.innerHTML = "Wind Speed: " + data.wind.speed + " MPH";
 
@@ -117,7 +114,7 @@ function weatherDashboard() {
                         fiveDayForecastEl[i].append(fiveDayForecastWeatherEl);
 
                         var fiveDayForecastTempEl = document.createElement("div");
-                        fiveDayForecastTempEl.innerHTML = "Temp " + (dataForecast.list[Multiplier].main.temp) + " &#176F";
+                        fiveDayForecastTempEl.innerHTML = "Temp " + parseFloat((((dataForecast.list[Multiplier].main.temp)-273.15)*1.8)+32).toFixed(2) + " &#176F";
                         fiveDayForecastEl[i].append(fiveDayForecastTempEl);
 
                         var fiveDayForecastHumidityEl = document.createElement("div");
